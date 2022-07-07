@@ -13,16 +13,13 @@ namespace MyHotel.Business.Services
     public class ReservationService : IReservationService
     {
         private readonly IReservationRepository _reservationRepository;
-        private readonly IRoomRepository _roomRepository;
         private readonly IMapper _mapper;
         public ReservationService(
             IReservationRepository reservationRepository, 
-            IRoomRepository roomRepository, 
             IMapper mapper)
         {
             _reservationRepository = reservationRepository;
             _mapper = mapper;
-            _roomRepository = roomRepository;
         }
         public int AddReservation(ReservationModel reservationModel)
         {
