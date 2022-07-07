@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Linq;
+using AutoMapper;
 using MyHotel.Business.Models;
 using MyHotel.Domain.IRepositories;
 using MyHotel.Entities;
@@ -7,18 +9,21 @@ namespace MyHotel.Business.Services
 {
     public class ReservationService : IReservationService
     {
-        private readonly IReservationRespository _reservationRespository;
+        private readonly IReservationRepository _reservationRepository;
         private readonly IMapper _mapper;
-        public ReservationService(IReservationRespository reservationRespository, IMapper mapper)
+        public ReservationService(IReservationRepository reservationRepository, IMapper mapper)
         {
-            _reservationRespository = reservationRespository;
+            _reservationRepository = reservationRepository;
             _mapper = mapper;
         }
-        public int AddReservation(ReservationModel reservationModel)
+        public Guid AddReservation(ReservationModel reservationModel)
         {
-            if (_reservationRespository.CheckAvailability(_mapper.Map<Reservation>(reservationModel)))
+            if (_reservationRepository.CheckAvailability(_mapper.Map<Reservation>(reservationModel), out var rooms))
             {
-                var res = _reservationRespository.Add(_mapper.Map<Reservation>(reservationModel));
+                var reservation = _mapper.Map<Reservation>(reservationModel);
+                reservation.Rooms = rooms;
+
+                var res = _reservationRepository.Add(reservation);
                 return res.Id;
             }
             throw new System.Exception();
@@ -26,7 +31,7 @@ namespace MyHotel.Business.Services
 
         public bool CheckReservation(ReservationModel reservationModel)
         {
-            return _reservationRespository.CheckAvailability(_mapper.Map<Reservation>(reservationModel));
+            return _reservationRepository.CheckAvailability(_mapper.Map<Reservation>(reservationModel), out _);
         }
     }
 }

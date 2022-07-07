@@ -14,7 +14,7 @@ namespace MyHotel.Persistance
             services.AddDbContext<MyHotelDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("MyHotelConnectionString")));
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
-            services.AddScoped<IReservationRespository, ReservationRepository>();
+            services.AddScoped<IReservationRepository, ReservationRepository>();
             services.AddScoped<IGuestRepository, GuestRepository>();
             services.AddScoped<IRoomRepository, RoomRepository>();
 
