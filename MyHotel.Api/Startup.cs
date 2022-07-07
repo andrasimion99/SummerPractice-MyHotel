@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MyHotel.Api.Filters;
+using MyHotel.Api.Middleware;
 using MyHotel.Business;
 using MyHotel.Persistance;
 using System;
@@ -28,7 +31,7 @@ namespace MyHotel.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            BuildMvc(services);
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -54,10 +57,19 @@ namespace MyHotel.Api
 
             app.UseAuthorization();
 
+            app.UseMiddleware<ExceptionHandlerMiddleware>();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+        }
+
+        private void BuildMvc(IServiceCollection services)
+        {
+            services.AddMvc(options => { options.Filters.Add(typeof(ValidationFilter)); })
+                .AddFluentValidation(c => { c.RegisterValidatorsFromAssemblyContaining<Startup>(); })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
     }
 }

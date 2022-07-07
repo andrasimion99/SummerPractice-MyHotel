@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using AutoMapper;
+using MyHotel.Business.Exceptions;
 using MyHotel.Business.Models;
 using MyHotel.Domain.IRepositories;
 using MyHotel.Entities;
@@ -26,7 +27,7 @@ namespace MyHotel.Business.Services
                 var res = _reservationRepository.Add(reservation);
                 return res.Id;
             }
-            throw new System.Exception();
+            throw new NotAvailableException("The reservation can't be fulfilled anymore");
         }
 
         public bool CheckReservation(ReservationModel reservationModel)
