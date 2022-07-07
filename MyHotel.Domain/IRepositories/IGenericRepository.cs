@@ -5,7 +5,7 @@ namespace MyHotel.Domain.IRepositories
 {
     public interface IBaseRepository<T> where T : class
     {
-        T GetById(Guid id);
+        T GetById(int id);
         IReadOnlyList<T> ListAll();
         T Add(T entity);
         void Update(T entity);
