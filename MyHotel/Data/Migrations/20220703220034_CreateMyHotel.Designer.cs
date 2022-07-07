@@ -9,7 +9,7 @@ using MyHotel.Data;
 
 namespace MyHotel.Data.Migrations
 {
-    [DbContext(typeof(DataContext))]
+    [DbContext(typeof(MyHotelDbContext))]
     [Migration("20220703220034_CreateMyHotel")]
     partial class CreateMyHotel
     {

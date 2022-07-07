@@ -5,6 +5,7 @@ namespace MyHotel.Business.Services
 {
     public interface IReservationService
     {
-        Guid AddReservation(ReservationModel reservationModel);
+        int AddReservation(ReservationModel reservationModel);
+        bool CheckReservation(ReservationModel reservationModel);
     }
 }
