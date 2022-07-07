@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using MyHotel.Entities;
+using MyHotel.Domain.Entities;
 
 namespace MyHotel.Domain.IRepositories
 {

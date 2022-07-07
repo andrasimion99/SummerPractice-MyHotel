@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using MyHotel.Data;
 using MyHotel.Domain.IRepositories;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
+using MyHotel.Domain.Entities;
+using MyHotel.Persistance.Data;
 
 namespace MyHotel.Persistance.Repositories
 {
