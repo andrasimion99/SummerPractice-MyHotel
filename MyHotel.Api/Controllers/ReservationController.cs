@@ -6,7 +6,7 @@ using MyHotel.Business.Services.IServices;
 
 namespace MyHotel.Api.Controllers
 {
-    [Route("api/reservation")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ReservationController : ControllerBase
     {
