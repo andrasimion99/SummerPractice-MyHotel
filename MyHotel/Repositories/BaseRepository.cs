@@ -29,7 +29,7 @@ namespace MyHotel.Persistance.Repositories
             _dbContext.SaveChanges();
         }
 
-        public T GetById(Guid id)
+        public T GetById(int id)
         {
             return  _dbContext.Set<T>().Find(id);
         }

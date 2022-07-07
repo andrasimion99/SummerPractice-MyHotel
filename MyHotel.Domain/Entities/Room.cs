@@ -9,6 +9,6 @@ namespace MyHotel.Domain.Entities
         public int Price { get; set; }
         public string Facilities { get; set; }
         public string Status { get; set; }
-        public ICollection<Reservation> Reservations { get; set; }
+        public ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
     }
 }
