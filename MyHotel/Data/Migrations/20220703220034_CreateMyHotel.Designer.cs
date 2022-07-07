@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyHotel.Data;
+using MyHotel.Persistance.Data;
 
 namespace MyHotel.Data.Migrations
 {

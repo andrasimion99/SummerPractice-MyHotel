@@ -1,8 +1,9 @@
 ﻿using AutoMapper;
 using MyHotel.Business.Exceptions;
 using MyHotel.Business.Models;
+using MyHotel.Business.Services.IServices;
+using MyHotel.Domain.Entities;
 using MyHotel.Domain.IRepositories;
-using MyHotel.Entities;
 
 namespace MyHotel.Business.Services
 {

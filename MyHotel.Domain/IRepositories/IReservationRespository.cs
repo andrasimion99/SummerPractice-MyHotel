@@ -1,4 +1,4 @@
-﻿using MyHotel.Entities;
+﻿using MyHotel.Domain.Entities;
 
 namespace MyHotel.Domain.IRepositories
 {

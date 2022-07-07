@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MyHotel.Business.Models;
-using MyHotel.Entities;
+using MyHotel.Domain.Entities;
 
 namespace MyHotel.Business.Profiles
 {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MyHotel.Entities
+﻿namespace MyHotel.Domain.Entities
 {
     public class BaseEntity
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MyHotel.Entities
+namespace MyHotel.Domain.Entities
 {
     public class Reservation : BaseEntity
     {

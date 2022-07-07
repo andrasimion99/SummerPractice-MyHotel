@@ -1,7 +1,4 @@
-﻿using MyHotel.Data;
-using MyHotel.Entities;
-
-namespace MyHotel
+﻿namespace MyHotel.Persistance
 {
     internal class Program
     {

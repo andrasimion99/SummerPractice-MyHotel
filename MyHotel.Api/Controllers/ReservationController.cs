@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MyHotel.Business.Models;
 using MyHotel.Business.Services;
+using MyHotel.Business.Services.IServices;
 
 namespace MyHotel.Api.Controllers
 {

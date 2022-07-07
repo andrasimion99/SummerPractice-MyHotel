@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MyHotel.Business.Services;
 using System.Reflection;
+using MyHotel.Business.Services.IServices;
 
 namespace MyHotel.Business
 {

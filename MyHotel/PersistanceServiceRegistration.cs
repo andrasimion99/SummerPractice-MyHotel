@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyHotel.Data;
 using MyHotel.Domain.IRepositories;
+using MyHotel.Persistance.Data;
 using MyHotel.Persistance.Repositories;
 
 namespace MyHotel.Persistance

@@ -1,7 +1,6 @@
 ﻿using MyHotel.Business.Models;
-using System;
 
-namespace MyHotel.Business.Services
+namespace MyHotel.Business.Services.IServices
 {
     public interface IReservationService
     {

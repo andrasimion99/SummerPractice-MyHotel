@@ -1,7 +1,8 @@
 ﻿using MyHotel.Data;
 using MyHotel.Domain.IRepositories;
-using MyHotel.Entities;
 using System.Linq;
+using MyHotel.Domain.Entities;
+using MyHotel.Persistance.Data;
 
 namespace MyHotel.Persistance.Repositories
 {

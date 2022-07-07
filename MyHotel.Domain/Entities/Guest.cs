@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MyHotel.Entities
+namespace MyHotel.Domain.Entities
 {
     public class Guest : BaseEntity
     {

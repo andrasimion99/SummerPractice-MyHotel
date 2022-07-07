@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MyHotel.Entities;
+using MyHotel.Domain.Entities;
 
-namespace MyHotel.Data.Mappings
+namespace MyHotel.Persistance.Data.Mappings
 {
     internal abstract class GuestMapping
     {
