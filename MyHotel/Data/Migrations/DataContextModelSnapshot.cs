@@ -8,7 +8,7 @@ using MyHotel.Data;
 
 namespace MyHotel.Data.Migrations
 {
-    [DbContext(typeof(DataContext))]
+    [DbContext(typeof(MyHotelDbContext))]
     partial class DataContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
