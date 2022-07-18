@@ -1,6 +1,9 @@
 # SummerPractice-MyHotel
 
-## Migrate .Net 5 to .Net 6, [the last .Net LTS version provided by Microsoft](https://dotnet.microsoft.com/en-us/platform/support/policy)
+## Migrate .Net 5 to .Net 6
+.Net 6 is the [the last .Net LTS version provided by Microsoft](https://dotnet.microsoft.com/en-us/platform/support/policy).
+
+Steps:
 * Go to all project files "*csproj" by double click on the project and change the TargetFramework from net5.0 into net6.0
 * Right click solution and select "Manage Nuget Packages for Solution..."
   * Go to Updates menu and choose "Select all packages"
