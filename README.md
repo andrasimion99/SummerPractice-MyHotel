@@ -1,5 +1,6 @@
 ## Integration tests
-* Right click project HumanitarianAid.API.IntegrationTests, Manage NuGet Packages, find and search the NuGet packages
+* In solution folder "99. Tests", add new project "MyHotel.IntegrationTests" by using the project template "xUnit Test Project" and the .Net 6 framework
+* Add new project  click project HumanitarianAid.API.IntegrationTests, Manage NuGet Packages, find and search the NuGet packages
   * FluentAssertions
   * Microsoft.AspNetCore.Mvc.Testing
 * Write the integration test in the SheltersControllerTests for the ShelterController register shelter functionality
