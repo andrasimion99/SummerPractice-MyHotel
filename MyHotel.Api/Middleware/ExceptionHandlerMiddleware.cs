@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using MyHotel.Business.Exceptions;
-using Newtonsoft.Json;
 using System;
 using System.Net;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace MyHotel.Api.Middleware
@@ -47,7 +47,7 @@ namespace MyHotel.Api.Middleware
             }
             if (result != string.Empty)
             {
-                result = JsonConvert.SerializeObject(new { error = ex.Message });
+                result = JsonSerializer.Serialize(new { error = ex.Message });
             }
 
             context.Response.StatusCode = (int)httpStatusCode;
