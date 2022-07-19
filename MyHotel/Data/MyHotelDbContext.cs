@@ -15,11 +15,6 @@ namespace MyHotel.Persistance.Data
               : base(options)
         {
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            string connectionString = @"Server=(local)\SQLEXPRESS;Database=MyHotel;Trusted_Connection=True;";
-            optionsBuilder.UseSqlServer(@connectionString);
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
