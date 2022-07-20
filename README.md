@@ -1,5 +1,5 @@
 ## Integration tests
-* In solution folder "99. Tests", add new project "MyHotel.IntegrationTests" by using the project template "xUnit Test Project" and the .Net 6 framework
+* In solution folder "99. Tests", add new project "MyHotel.IntegrationTests" by using the project template "MsTest Test Project" and the .Net 6 framework
 * Right click project MyHotel.IntegrationTests, Manage NuGet Packages, find and search the NuGet packages
   * FluentAssertions
   * Microsoft.AspNetCore.Mvc.Testing
