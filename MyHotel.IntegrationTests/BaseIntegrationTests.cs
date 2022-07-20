@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -21,6 +22,7 @@ namespace MyHotel.IntegrationTests
         {
             _application = new WebApplicationFactory<ReservationController>()
                 .WithWebHostBuilder(_ => { });
+
             HttpClient = _application.CreateClient();
 
             await CleanupDatabase();
@@ -36,9 +38,9 @@ namespace MyHotel.IntegrationTests
         {
             using var scope = _application.Services.CreateScope();
             var databaseContext = scope.ServiceProvider.GetRequiredService<MyHotelDbContext>();
-            databaseContext.Database.EnsureCreated();
             databaseContext.Database.Migrate();
             databaseContext.Reservations.RemoveRange(databaseContext.Reservations.ToList());
+            databaseContext.Guests.RemoveRange(databaseContext.Guests.ToList());
             databaseContext.Rooms.RemoveRange(databaseContext.Rooms.ToList());
             await databaseContext.SaveChangesAsync();
         }
